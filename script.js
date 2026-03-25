@@ -1,29 +1,32 @@
+const btn = document.createElement("button")
+btn.textContent = "amount of boxes"
+document.body.appendChild(btn)
+
+
 const container = document.createElement("div")
 container.classList.add("container")
-
-
-// setAttribute("style", 
-//     `width: 1000px;
-//     height: 1000px;
-//     border: 10px, solid, black;
-//     display: flex;
-//     justify-content: space-evenly;
-//     flex-wrap: wrap;
-
-//     `)
-
-
 document.body.append(container)
+document.body.classList.add("bodySetup")
 
-document.body.setAttribute("style", "display: flex; align-items: center; justify-content: center")
+
+function userInput () {
+    let amount = prompt("please enter amount of boxes per row")
+
+    console.log(parseInt(amount))
+
+
+    container.innerHTML = ""
+    //createCanvas(4)
+    return createCanvas(parseInt(amount))
+}
 
 function createCanvas(nBlocks) {
 
     const blockSize = (1000 - (16*(nBlocks+1)))/ (nBlocks)
 
-    for (let i = 1; i <= nBlocks*nBlocks && i <= 100; i++) {
+    for (let i = 1; i <= nBlocks*nBlocks && i <= 10000; i++) {
 
-        console.log("i: ", i)
+        //console.log("i: ", i)
 
         const box = document.createElement("div")
         box.setAttribute("style", `width: ${blockSize}px; height: ${blockSize}px;`)
@@ -44,5 +47,6 @@ function createCanvas(nBlocks) {
 
 createCanvas(3)
 
+btn.addEventListener("click", userInput)
 
 

@@ -1,3 +1,18 @@
+.bodySetup {
+    display: flex; 
+    align-items: center; 
+    justify-content: center;
+    flex-direction: column;
+}
+
+
+button {
+    margin-bottom: 2rem;
+    width: 10rem;
+    height: 3rem;
+    font-size: 1rem;
+}
+
 .container {
     width: 1000px;
     height: 1000px;
@@ -9,19 +24,19 @@
 
     flex-wrap: wrap;
 
-    gap: 16px;
+    gap: 1rem;
 
 
 }
 
 .box {
     /* margin: 1rem; */
-    background-color: red;
+    background-color: black;
 
 }
 
 .box.hover {
-    background-color: black;
+    background-color: red;
 }
 
 
