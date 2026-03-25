@@ -1,0 +1,27 @@
+.container {
+    width: 1000px;
+    height: 1000px;
+    border: 10px, solid, black;
+    display: flex;
+
+    align-content: center;
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 16px;
+
+
+}
+
+.box {
+    /* margin: 1rem; */
+    background-color: red;
+
+}
+
+.box.hover {
+    background-color: black;
+}
+
+
