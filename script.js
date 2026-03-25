@@ -1,5 +1,5 @@
 const btn = document.createElement("button")
-btn.textContent = "amount of boxes"
+btn.textContent = "Amount of boxes"
 document.body.appendChild(btn)
 
 
@@ -17,12 +17,12 @@ function userInput () {
 
     container.innerHTML = ""
     //createCanvas(4)
-    return createCanvas(parseInt(amount))
+    return createCanvas(parseInt(amount), 2)
 }
 
-function createCanvas(nBlocks) {
+function createCanvas(nBlocks = 3, gapBetweenBlocks = 2) {
 
-    const blockSize = (1000 - (16*(nBlocks+1)))/ (nBlocks)
+    const blockSize = (1000 - (gapBetweenBlocks*(nBlocks+1)))/ (nBlocks)
 
     for (let i = 1; i <= nBlocks*nBlocks && i <= 10000; i++) {
 
@@ -45,7 +45,7 @@ function createCanvas(nBlocks) {
 }
 
 
-createCanvas(3)
+createCanvas()
 
 btn.addEventListener("click", userInput)
 
