@@ -16,13 +16,14 @@ function userInput () {
 
 
     container.innerHTML = ""
-    //createCanvas(4)
     return createCanvas(parseInt(amount), 2)
 }
 
 function createCanvas(nBlocks = 3, gapBetweenBlocks = 2) {
 
     const blockSize = (1000 - (gapBetweenBlocks*(nBlocks+1)))/ (nBlocks)
+
+    let opacityBlock = 0
 
     for (let i = 1; i <= nBlocks*nBlocks && i <= 10000; i++) {
 
@@ -37,7 +38,12 @@ function createCanvas(nBlocks = 3, gapBetweenBlocks = 2) {
             
             console.log(event.currentTarget)
 
-            event.currentTarget.classList.add("hover")
+            event.currentTarget.style.background = `rgb(${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${Math.floor(Math.random()*256)}, ${opacityBlock})`
+            opacityBlock += .1
+
+            console.log(opacityBlock)
+
+            //event.currentTarget.classList.add("hover")
 
             //event.currentTarget.style.background = "black"
         })
